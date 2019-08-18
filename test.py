@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #! /usr/bin/env python
 
 import os
@@ -42,7 +43,7 @@ def main():
     file_list = glob.glob(input_folder + "/*.txt")
     for file in file_list:
         read_flag = False
-        with open(file, 'r')as f:
+        with open(file, 'r',encoding='shift_jis')as f:
             line = f.readline()
             while line:
                 while not read_flag:
@@ -55,7 +56,7 @@ def main():
                         line = f.readline()
                 result2 = result_extracter(line,result, r_time)
                 line = f.readline()
-    header_list = header.split(",")    
+    header_list = header.split(",")
     result2 = " ".join(result)
     with open(input_folder+"/output.csv", 'w')as f:
         f.write(names +"\n")
