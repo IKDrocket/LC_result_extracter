@@ -34,7 +34,8 @@ def main():
         r_time = args.r_time.split(",")
     if args.name:
         names = args.name.split(",")
-        names = " ".join(names)
+        name_list = [name+"," for name in names]
+        names = " ".join(name_list)
 
     header = ""
     result = []
