@@ -20,8 +20,8 @@ def result_extracter(line, result,r_time):
     for r in r_time:
         r = float(r)
         if line_list != ['\n'] and  (r -0.2) < float(line_list[1]) < (r +0.2):
-            if r == r_time[-1]:
-                result.append(line_list[4]+"\n")
+            if r == float(r_time[-1]):
+                result.append(line_list[4]+",\n")
             else:
                 result.append(line_list[4]+",")
 
