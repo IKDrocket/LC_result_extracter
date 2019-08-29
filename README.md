@@ -4,7 +4,7 @@ LC分析結果がまとまったtxtファイルから任意のデータを抽出
 一般的には以下のように実行します。
 
 ```
-python test.py [input_folder] -n [Compound_names] -t [Retention times]
+python LC_result_extracter.py [input_folder] -n [Compound_names] -t [Retention times]
 ```
 
 あらかじめ `input_folder`にあたるフォルダーを作成し、その中にLC分析結果がまとまったtxtファイルを入れておいて下さい。
@@ -18,7 +18,7 @@ python test.py [input_folder] -n [Compound_names] -t [Retention times]
 の場合以下のように実行する。
 
 ```
-python test.py output_190813 -n x,y,z -t 7.5,9.3,21.9
+python LC_result_extracter.py output_190813 -n x,y,z -t 7.5,9.3,21.9
 ```
 
 すると、 `output_190813`のフォルダー内に `output_190813.csv`というファイルが作成されています。
