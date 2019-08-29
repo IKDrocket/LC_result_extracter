@@ -7,8 +7,7 @@ LC分析結果がまとまったtxtファイルから任意のデータを抽出
 python test.py [input_folder] -n [Compound_names] -t [Retention times]
 ```
 
-あらかじめ `input_folder`にあたるフォルダーを作成し、
-その中にLC分析結果がまとまったtxtファイルを入れておいて下さい。
+あらかじめ `input_folder`にあたるフォルダーを作成し、その中にLC分析結果がまとまったtxtファイルを入れておいて下さい。
 
 ## テストケース
 ```
