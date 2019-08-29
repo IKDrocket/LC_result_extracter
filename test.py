@@ -16,15 +16,23 @@ def argparser():
     return args
 
 
-def result_extracter(line, result,r_time):
+def result_extracter(line, result,r_time, r_time_flag):
     line_list = line.split("\t")
+    r_time_count = 0
     for r in r_time:
         r = float(r)
         if line_list != ['\n'] and  (r -0.2) < float(line_list[1]) < (r +0.2):
             if r == float(r_time[-1]):
-                result.append(line_list[4]+",\n")
+                #result.append(line_list[4]+",\n")
+                r_time_flag[r_time_count] = line_list[4]
             else:
-                result.append(line_list[4]+",")
+                #result.append(line_list[4]+",")
+                r_time_flag[r_time_count] = line_list[4]
+        elif line_list == ['\n']:
+            break
+        r_time_count += 1
+        
+
 
 
 def main():
@@ -35,7 +43,10 @@ def main():
         r_time = args.r_time.split(",")
     if args.name:
         names = args.name.split(",")
-        name_list = [name+"," for name in names]
+        name_list = []
+        name_list.append(",")
+        for name in names:
+            name_list.append(name+",")
         names = " ".join(name_list)
 
     header = ""
@@ -43,7 +54,9 @@ def main():
     file_list = glob.glob(input_folder + "/*.txt")
     for file in file_list:
         read_flag = False
+        r_time_flag = [str(0)]*len(r_time)
         with open(file, 'r',encoding='shift_jis')as f:
+            result.append(file+",")
             line = f.readline()
             while line:
                 while not read_flag:
@@ -54,14 +67,15 @@ def main():
                         break
                     else:
                         line = f.readline()
-                result2 = result_extracter(line,result, r_time)
+                result2 = result_extracter(line,result, r_time, r_time_flag)
                 line = f.readline()
+            result_list = ",".join(r_time_flag)
+            result.append(result_list+"\n")
+        
     header_list = header.split(",")
     result2 = " ".join(result)
     with open(input_folder+"/output.csv", 'w')as f:
         f.write(names +"\n")
         f.write(result2)
-
-
 
 main()

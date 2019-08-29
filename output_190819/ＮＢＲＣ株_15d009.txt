@@ -1,0 +1,24 @@
+[Header]
+Application Name	LabSolutions
+Version	5.71 SP1
+Data File Name	C:\LabSolutions\Data\LC-1\ikeda\20190828\‚m‚a‚q‚bŠ”_15d009.lcd
+Output Date	2019/08/29
+Output Time	16:32:59
+
+[Configuration]
+Instrument Name	LC-1_PDA
+Instrument #	1
+Line #	1
+# of Detectors	1
+Detector ID	PDA
+Detector Name	PDA
+# of Channels	1
+
+[Peak Table(PDA-Ch1)]
+# of Peaks	4
+Peak#	R.Time	I.Time	F.Time	Area	Height	A/H	Conc.	Mark	ID#	Name	k'	Plate #	Plate Ht.	Tailing	Resolution	Sep.Factor	Area Ratio	Height Ratio	Conc. %	Norm Conc.
+1	1.794	0.021	1.952	105496	1309	80.583	0.000	   			0.000	5	28204.105	0.000	0.000	0.000	0	0	0.000	0.000
+2	2.152	1.952	2.251	30439	4299	7.080	0.000	 V 			0.200	2641	56.801	0.000	0.218	0.000	0	0	0.000	0.000
+3	7.210	6.965	7.413	10111	694	14.564	0.000	   			3.020	4485	33.444	0.000	16.914	15.129	0	0	0.000	0.000
+4	8.337	8.053	8.779	36514	2490	14.666	0.000	   			3.648	6895	21.755	1.319	2.708	1.208	0	0	0.000	0.000
+
