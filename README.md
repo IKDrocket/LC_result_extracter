@@ -15,7 +15,7 @@ python LC_result_extracter.py [input_folder] -n [Compound_names] -t [Retention t
 化合物名:y, Retention times:9.3
 化合物名:z, Retention times:21.9
 ```
-の場合以下のように実行する。
+の場合以下のように実行します。
 
 ```
 python LC_result_extracter.py output_190813 -n x,y,z -t 7.5,9.3,21.9
