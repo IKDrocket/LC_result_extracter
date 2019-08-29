@@ -1,5 +1,0 @@
-python test.py [input_folder] -n [Compound_names] -t [Retention times]
-
-example
-
-python test.py output_190813 -n Astaxanthin,x,É¿-carotene -t 7.5,9.3,21.9
