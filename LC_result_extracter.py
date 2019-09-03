@@ -61,7 +61,8 @@ def main():
             read_flag = False
             r_time_flag = [str(0)]*len(r_time)
             with open(file, 'r',encoding='shift_jis')as f:
-                result.append(file+",")
+                file_name = file.lstrip(input_folder).rstrip(".txt")
+                result.append(file_name+",")
                 line = f.readline()
                 while line:
                     while not read_flag:
@@ -77,11 +78,12 @@ def main():
                 result_list = ",".join(r_time_flag)
                 result.append(result_list+"\n")
             pbar.update(1)
-    print(pbar) 
+            #time.sleep(1)
+    print(pbar)
     print("Program done.")
     header_list = header.split(",")
     result2 = " ".join(result)
-    with open(input_folder+"/output.csv", 'w')as f:
+    with open(input_folder+"/"+ input_folder +".csv", 'w')as f:
         f.write(names +"\n")
         f.write(result2)
 
