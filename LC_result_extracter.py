@@ -18,21 +18,20 @@ def argparser():
     return args
 
 
-def result_extracter(line, result,r_time, r_time_flag, file):
+def result_extracter(line, result,r_time, r_time_flag, file, total_peak):
     line_list = line.split("\t")
     r_time_count = 0
+    if line_list != ['\n']:
+        total_peak += int(line_list[4])
     for r in r_time:
         r = float(r)
-        if line_list != ['\n'] and  (r -0.2) < float(line_list[1]) < (r +0.2):
-            if r == float(r_time[-1]):
-                #result.append(line_list[4]+",\n")
-                r_time_flag[r_time_count] = line_list[4]
-            else:
-                #result.append(line_list[4]+",")
+        if line_list != ['\n']:
+            if  (r -0.2) < float(line_list[1]) < (r +0.2):
                 r_time_flag[r_time_count] = line_list[4]
         elif line_list == ['\n']:
             break
         r_time_count += 1
+    return total_peak
 
 def main():
     args = argparser()
@@ -46,10 +45,12 @@ def main():
         name_list.append(",")
         for name in names:
             name_list.append(name+",")
+        name_list.append("total,")
         names = " ".join(name_list)
 
     header = ""
     result = []
+    total_peak = 0
     file_list = glob.glob(input_folder + "/*.txt")
     print("\n"+'===Start extraction==='+"\n")
     with tqdm(file_list,
@@ -63,6 +64,7 @@ def main():
             with open(file, 'r',encoding='shift_jis')as f:
                 file_name = file.lstrip(input_folder).rstrip(".txt")
                 result.append(file_name+",")
+                total_peak = 0
                 line = f.readline()
                 while line:
                     while not read_flag:
@@ -73,8 +75,10 @@ def main():
                             break
                         else:
                             line = f.readline()
-                    result_extracter(line,result, r_time, r_time_flag, file)
+                    total_peak = result_extracter(line,result, r_time, r_time_flag, file, total_peak)
+                    
                     line = f.readline()
+                r_time_flag.append(str(total_peak))
                 result_list = ",".join(r_time_flag)
                 result.append(result_list+"\n")
             pbar.update(1)
