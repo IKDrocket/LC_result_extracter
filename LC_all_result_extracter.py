@@ -147,8 +147,6 @@ def main():
             #time.sleep(1)
     print(pbar)
     print("Program done.")
-    print(r_time_dict)
-    print(result_list)
     header_list = header.split(",")
     #result2 = ",".join(result_list)
     with open(input_folder+"/"+ input_folder +".csv", 'w')as f:
