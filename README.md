@@ -1,3 +1,12 @@
+# LC_all_result_extracter
+
+LC分析結果がまとまったtxtファイルから全ピークのデータを抽出するツールです。
+一般的には以下のように実行します。
+
+```
+python LC_result_extracter.py [input_folder]
+```
+
 # LC_result_extracter
 
 LC分析結果がまとまったtxtファイルから任意のデータを抽出するツールです。
