@@ -4,7 +4,7 @@ LC分析結果がまとまったtxtファイルから全ピークのデータを
 一般的には以下のように実行します。
 
 ```
-python LC_result_extracter.py [input_folder]
+python LC_all_result_extracter.py [input_folder]
 ```
 
 # LC_result_extracter
