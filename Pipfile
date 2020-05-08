@@ -5,6 +5,9 @@ verify_ssl = true
 
 [dev-packages]
 cx-freeze = "*"
+pep8 = "*"
+flake8 = "*"
+v = {editable = true,version = "*"}
 
 [packages]
 tqdm = "*"

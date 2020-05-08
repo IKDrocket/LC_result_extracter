@@ -12,7 +12,8 @@ buildOptions = dict(packages=packages, excludes=[],
 base = 'Console'
 
 executables = [
-    Executable('LC_result_extracter.py', base=base, targetName='LC_result_extracter')
+    Executable('LC_result_extracter.py', base=base, targetName='LC_result_extracter'),
+    Executable('LC_all_result_extracter.py', base=base, targetName='LC_all_result_extracter')
 ]
 
 setup(name='LC_result_extracter',
