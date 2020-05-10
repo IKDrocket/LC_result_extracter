@@ -4,13 +4,16 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-cx-freeze = "*"
 pep8 = "*"
-flake8 = "*"
+pyflakes = "*"
+e1839a8 = {path = "."}
 v = {editable = true,version = "*"}
+cx-freeze = "*"
 
 [packages]
 tqdm = "*"
+e1839a8 = {editable = true,path = "."}
+logzero = "*"
 
 [requires]
 python_version = "3.6"
