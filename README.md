@@ -6,6 +6,7 @@ LC分析結果がまとまったtxtファイルから全ピークのデータを
 ```
 python LC_result_extracter.py [input_folder]　[error_value]
 ```
+| | |
 | :----: | :----: |
 |input_folder|対象データ(txt)を含むフォルダーのパス|
 |error_value|許容する誤差範囲の指定(sec)|
@@ -17,6 +18,7 @@ python LC_result_extracter.py test_data/ 0.02
 すると、 `test_data`のフォルダー内に `test_data_%Y%m%d_%H%M%S.csv`というファイルが作成されています。
 
 ##### %Y%m%d_%H%M%Sの意味について
+| | |
 | :----: | :----: |
 |西暦(4桁)|	%Y|
 |月(2桁)|%m|
@@ -76,7 +78,9 @@ python LC_result_extracter.py test_data/ 0.02
 |0|0|7279|
 |0|6988|0|
 |7320|0|0|
+
 ↓↓↓↓↓↓↓↓↓↓
+
 |1.79|
 | :----: |
 |7279|
@@ -84,20 +88,6 @@ python LC_result_extracter.py test_data/ 0.02
 |7320|
 
 `error_value`が大きくなるほど、この仕様による弊害が大きくなるので、各自で適切な`error_value`を導き出す必要があります。
-
-
-
-```
-python LC_result_extracter.py test_data/ 1
-```
-
-| :----: | :----: |
-|21.41|21.43|
-|1512|0|
-|1444|0|
-|1459|3133|
-|0|0|
-|0|0|
 
 
 ## -n オプション
