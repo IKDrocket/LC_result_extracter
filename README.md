@@ -13,7 +13,7 @@ python LC_result_extracter.py [input_folder]　[error_value]
 
 ## テストケース
 ```
-python LC_result_extracter.py test_data/ 0.02
+python LC_result_extracter.py test_data 0.02
 ```
 すると、 `test_data`のフォルダー内に `test_data_%Y%m%d_%H%M%S.csv`というファイルが作成されています。
 
@@ -47,7 +47,7 @@ python LC_result_extracter.py test_data/ 0.01
 
 ### error_valueが0.02の時
 ```
-python LC_result_extracter.py test_data/ 0.02
+python LC_result_extracter.py test_data 0.02
 ```
 この場合で出力されるcsvの一部は以下のようになります。
 |2.43|5.17|
@@ -69,7 +69,7 @@ python LC_result_extracter.py test_data/ 0.02
 この場合、3行目の値の両方でリテンションタイムで存在するので、マージは起きません。
 
 ```
-python LC_result_extracter.py test_data/ 1
+python LC_result_extracter.py test_data 1
 ```
 | | |
 | :----: | :----: |
@@ -105,7 +105,7 @@ python LC_result_extracter.py test_data/ 1
 ## -n オプション
 また、読み込んだテキストデータに抽出データが一切ない場合、`-n`オプションを加えることで出力ファイルの結果から取り除くことができます。
 ```
-python LC_result_extracter.py -n test_data/ 0.02
+python LC_result_extracter.py -n test_data 0.02
 ```
 出力されるcsvの一部は以下のようになります。
 
